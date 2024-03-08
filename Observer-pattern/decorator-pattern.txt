@@ -1,0 +1,22 @@
+Decorator Pattern :-
+
+Official Defination:- Decorator pattern  behavior attaches additional responsibilities to an object dynamically or at runtime.
+Decorators provide a flexible alternative to subclassing for extending functionality.
+
+1. Adds addtional behavior at runtime in a object.
+2. objecttype and decortor object type is the same and can be placed  in place of one another.
+3. Multiple decorators could be attached to an object to add multiple kind of addtional behavior.
+4. Decorator pattern works very closely with the Open/closed principal of the SOLID principal.
+5. Open / Closed principal :- A class should be open for extension but close for modifications (code example).
+6. Decorator objects could be thought of as a wrapper.
+7. Decorator are mostly created with combination of Factory and builder patterns.
+8. When to use decorator pattern:-
+    a. Add responsibilities dynamically to object.
+    b. Avoid complex Inheritence Heriarchy.
+9. Disadvantages of Decorator pattern:-
+    1. Leads to a complex code sturcture difficult to debug.
+    2. Significant learning curve required to implement.
+
+Implementation of pattern requires 4 different components:-
+ 1. Component               2. Concrete component
+ 3. decorator               4. concrete decorator

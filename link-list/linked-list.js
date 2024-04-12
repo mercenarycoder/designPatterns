@@ -88,6 +88,9 @@ class LinkedList{
         }
         console.log(last.ele);
     }
+    reverseFromIndextoIndex(){
+        
+    }
 }
 
 let list1 = new LinkedList();

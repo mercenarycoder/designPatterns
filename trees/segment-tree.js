@@ -105,7 +105,7 @@ class SegmentTree {
 
 let arr=[3,8,6,7,-2,-8,4,9];
 let st = new SegmentTree(arr);
-// st.display()
-// st.update(3,23);
-// st.display();
+st.display()
+st.update(3,23);
+st.display();
 console.log(st.query(1,6));

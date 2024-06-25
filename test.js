@@ -1,85 +1,40 @@
-// // console.log('First line')
-// // fs.readFile('sample.txt', () => {
-// //     console.log('reading completed')
-// // })
-// // setTimeout(()=>{
-// //     console.log("timeout");
-// // },2000);
-// // console.log('Last line')
+/*
+Given an array arr[] of size N. The task is to find the sum of the contiguous subarray within a arr[] with the largest sum. 
+Example:
+Input: arr = {-2,-3,4,-1,-2,1,5,-3}
+Output: 7
+Explanation: The subarray {4,-1, -2, 1, 5} has the largest sum 7.
+*/
+getLargestSum([-2,-3,4,-1,-2,1,5,-3]);
 
-// let arr = [2,4,6,7,9];
-// let target = 13;
-// //output = [1,4]
-// let res = [];
-// function getTargetSum(i,target,sum,list){
-//     if(sum==target && list.length == 2){
-//         res.push([...list]);
-//         return;
-//     }
-//     if(i>=arr.length || sum > target){
-//         // console.log(sum);
-//         return;
-//     }
-//     list.push(arr[i]);
-//     getTargetSum(i,target,sum+arr[i],list);
-//     list.pop();
-//     getTargetSum(i+1,target,sum,list);
-// }
-// getTargetSum(0,target,0,[]);
-// // console.log(res);
-// let ans = [];
-// let obj = {};
-// for(let i=0; i<arr.length; i++){
-//     if(!obj[arr[i]]){
-//         obj[arr[i]] = i;
-//     }
-// }
-// for(let i=0; i<res.length; i++){
-//     let [a,b] = res[i];
-//     ans.push([obj[a],obj[b]]);
-// }
-// console.log(ans);
-
-// function outer(){
-//     let name = "manjeet"
-//     function inner(){
-
-//         console.log(name);
-//     };
-//     return inner;
-// }
-// let name;
-// outer();
-
-function printHello() {
-    console.log('Hello')
-}
-printHello()
-var a = [];
-console.log(a) //undefined 10
-a=10;
-useEffect(async()=>{
-    const res1 = await axios.get('');
-});
-
-actions
-reducers
-
-mapState
-
-dis
-
-//mounting phase
-constructor(){
-
-}
-componentDidMount(){
-
-}
-render(){
-  
+function getLargestSum(arr) {
+  let left = 0;
+  let right = arr.length - 1;
+  let sum = 0;
+  let totalInitialSum =  sumTotal(arr.slice(left, right+1)); 
+  while (right > left) {
+    
+    if (totalInitialSum > sum) {
+      sum = totalInitialSum;
+    }
+    let s2 = totalInitialSum - arr[left];
+    let s3 = totalInitialSum - arr[right];
+    // console.log(totalInitialSum," ",s2," ",s3);
+    if (s2 > s3) {
+      left += 1;
+      totalInitialSum = s2;
+    } else {
+      right -= 1;
+      totalInitialSum = s3;
+    }
+  }
+  console.log(sum);
 }
 
-//updatingphase
-shouldComponentUpdate()
-
+function sumTotal(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
